@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #eef2f7; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    fieldset {
+        background-color: white;
+        border-radius: 12px; 
+        padding: 25px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+        width: 380px;
+        border: none;
+    }
+
+    legend {
+        font-size: 18px;
+        font-weight: bold;
+        color: #007bff; 
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    label {
+        font-size: 14px;
+        color: #007bff;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        width: 100%;
+        padding: 12px; 
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+        
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="text"]:focus {
+        border-color: #007bff; 
+        outline: none; 
+    }
+
+    button {
+        width: 100%;
+        padding: 12px; 
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3; /* Darken button on hover */
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 480px) {
+        fieldset {
+            width: 95%; /* Make the form more responsive on smaller screens */
+        }
+    }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Signup</legend>
+        <form onsubmit="return signup()" action="register-user.php" method="POST">
+            <label for="email">Email: </label>
+            <input type="email" id="new_email" placeholder="create your new email here" required > <br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" placeholder="create password" required> <br>
+            <label for="confirm_password">Confirm Password: </label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password" required> <br>
+            <div>
+                <label for="fn">First Name: </label>
+                <input type="text" id="fn" name="fn" placeholder="ex: Mary" required> <br>
+                <label for="mn">Middle Name: </label>
+                <input type="text" id="mn" name="mn" placeholder="ex: Jane" required> <br>
+                <label for="ln">Last Name: </label>
+                <input type="text" id="ln" name="ln" placeholder="ex: Wilkins" required> <br>
+            </div>
+            <button type="submit">Signup</button>
+        </form>
+    </fieldset>
+    <p id="errors" class="error"></p>
+    <script src="script.js"></script>
+    </body>
+    </html>
